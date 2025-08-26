@@ -7,8 +7,9 @@
 #--------libraries---------------
 import random
 #--------functions---------------
-print input('What is your name?: ')
-
+name = input('What is your name?: ')
+age = int(input('What is your age?: '))
+run_time = input('What was your completed running time in minutes?: ')
 #-----main-----------------------
 if(__name__== "__main__"):
     main()
