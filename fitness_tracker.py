@@ -7,6 +7,8 @@
 #--------libraries---------------
 import random
 #--------functions---------------
+run_times = []
+
 name = input('What is your name?: ')
 age = int(input('What is your age?: '))
 run_time = input('What was your completed running time in minutes?: ')
