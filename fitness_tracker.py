@@ -18,11 +18,11 @@ def main():
     while True:
         try:
             age = int(input('How old are you?: '))
-            if age > 13
-            break
-        else:
-            print("Your age is invalid.")
-    age.append(age)
+            if age > 13:
+                break
+            else:
+                print("Your age is invalid.")
+                age.append(age)
     for i in range(run_times_inputs):
         run_times = input(f"Please enter your run time: ")
         run_times_list.append(run_times)
