@@ -26,8 +26,13 @@ def main():
                 print("Please input a valid number for your age")
             
     for i in range(run_times_inputs):
-        run_times = float(input(f"Please enter your run time #{i+1}: "))
-        run_times_list.append(run_times)
+        try:
+            run_times = float(input(f"Please enter your run time #{i+1}: "))
+            run_times_list.append(run_times)
+        except ValueError:
+            print("Invalid input. Please enter a numeric value.")
+            continue
+        
 #-----main-----------------------
 if(__name__== "__main__"):
     main()
