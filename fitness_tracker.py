@@ -7,6 +7,20 @@
 #--------libraries---------------
 import random
 #--------functions---------------
+def parse_time_input(time_str):
+    """Convert MM:SS or SS format to minutes as float."""
+    if ':' in time_str:
+        try:
+            minutes, seconds = map(int, time_str.split(':'))
+            return minutes + seconds / 60
+        except ValueError:
+            raise ValueError("Invalid format. Use MM:SS or SS.")
+    else:
+        try:
+            return float(time_str) / 60  # assume input is in seconds
+        except ValueError:
+            raise ValueError("Invalid numeric input.")
+
 def main():
     name = ''
     age = ''
@@ -27,12 +41,15 @@ def main():
 
 
     for i in range(run_times_inputs):
-        try:
-            run_times = float(input(f"Please enter your run time #{i+1}: "))
-            run_times_list.append(run_times)
-        except ValueError:
-            print("Invalid input. Please enter a numeric value.")
-            continue
+        while True:
+            time_input = input(f"Enter run time #{i+1} (MM:SS or seconds): ")
+            try:
+                run_time_minutes = parse_time_input(time_input)
+                run_times_list.append(run_time_minutes)
+                break
+            except ValueError as e:
+                print(e)
+
 
         average_run_time = sum(run_times_list) / len(run_times_list)
 
